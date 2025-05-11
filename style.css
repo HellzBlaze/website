@@ -1,0 +1,489 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography - Using commonly available fonts */
+/* You could use Google Fonts here if allowed, e.g., */
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap'); */
+
+body {
+    font-family: 'Arial', sans-serif; /* Clean, widely available body font */
+    line-height: 1.6;
+    color: #444; /* Slightly softer text color */
+    background-color: #fcf7f0; /* A soft, warm off-white background */
+}
+
+.container {
+    max-width: 1100px; /* Slightly wider container */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add padding on sides */
+}
+
+.section-spacing {
+    padding: 80px 0; /* More vertical space between sections */
+}
+
+h1, h2, h3 {
+    font-family: 'Georgia', serif; /* A classic, elegant heading font */
+    color: #0056b3; /* Keep the primary blue for headings */
+    margin-bottom: 25px; /* Slightly more space below headings */
+    font-weight: 700; /* Make headings bold */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 50px; /* More space below main section titles */
+    font-size: 2.5em; /* Larger main titles */
+}
+
+h3 {
+    font-size: 1.6em; /* Larger subheadings */
+}
+
+img {
+    display: block; /* Prevents extra space below image */
+    max-width: 100%; /* Makes images responsive */
+    height: auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* Softer, more prominent shadow */
+    position: sticky; /* Make header stick to the top */
+    top: 0;
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em; /* Slightly larger header title */
+    color: #0056b3; /* Keep blue for the main title */
+    display: flex; /* Align image and text */
+    align-items: center;
+    font-family: 'Arial', sans-serif; /* Maybe use sans-serif for the logo text */
+    font-weight: 700;
+}
+
+header h1 img { /* Style for the logo image */
+    margin-right: 15px; /* More space between logo and text */
+    height: 50px; /* Adjust height as needed */
+    width: auto;
+    display: inline-block; /* Keep image inline with text */
+    border-radius: 4px; /* Subtle rounded corners for logo */
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex; /* Arrange links horizontally */
+}
+
+nav ul li {
+    margin-left: 30px; /* More space between nav links */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #666; /* Softer color for nav links */
+    font-weight: bold;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 3px; /* Space for underline effect */
+}
+
+nav ul li a:hover {
+    color: #e09521; /* Accent color on hover */
+    border-bottom: 2px solid #e09521; /* Underline effect */
+}
+
+/* Hero Section Styles */
+#hero {
+    background: url('placeholder-hero-bg.jpg') no-repeat center center/cover; /* Add a background image */
+    background-attachment: fixed; /* Parallax-like effect */
+    color: white;
+    text-align: center;
+    padding: 150px 20px; /* More padding for a grander feel */
+    position: relative; /* Needed for overlay */
+}
+
+/* Optional: Add an overlay for better text readability */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative; /* Bring content above overlay */
+    z-index: 2;
+}
+
+#hero h2 {
+    color: white; /* White text over dark overlay */
+    font-size: 3em; /* Larger, more impactful hero heading */
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+}
+
+#hero p {
+    font-size: 1.3em; /* Larger hero text */
+    margin-bottom: 40px; /* More space before button */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #e09521; /* Accent color button */
+    color: white; /* White text */
+    padding: 15px 30px; /* Larger padding */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em; /* Larger button text */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow */
+}
+
+.btn:hover {
+    background-color: #c27c1b; /* Darker accent color on hover */
+}
+
+
+/* Menu Section Styles */
+#menu {
+    background-color: #ffffff; /* White background for the menu section */
+}
+
+#menu .menu-grid {
+    display: grid; /* Use CSS grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider min column size */
+    gap: 40px; /* More space between items */
+}
+
+.menu-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* More pronounced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Hide potential overflow from border-radius */
+    border: 1px solid #eee; /* Subtle border */
+}
+
+.menu-item:hover {
+    transform: translateY(-8px); /* More pronounced lift on hover */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* Larger shadow on hover */
+}
+
+/* Style the link inside menu-item */
+.menu-item a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make the entire div area clickable */
+    padding: 20px; /* Apply padding here instead of the parent div */
+}
+
+.menu-item img {
+    border-radius: 4px; /* Still apply border-radius to image */
+    margin-bottom: 20px; /* More space below image */
+    max-height: 200px; /* Slightly larger image height */
+    object-fit: cover; /* Crop image if needed */
+    /* Make image fill the width of the padding area */
+    max-width: calc(100% + 40px); /* Adjust to account for padding */
+    margin-left: -20px; /* Pull image left by padding amount */
+    margin-right: -20px; /* Pull image right by padding amount */
+    margin-top: -20px; /* Pull image up by padding amount */
+    /* Keep bottom margin */
+    margin-bottom: 20px;
+}
+
+.menu-item h3 {
+    margin-top: 0; /* Reset top margin */
+    font-size: 1.5em; /* Larger item title */
+    color: #007bff; /* Lighter blue */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.menu-item a:hover h3 { /* Change heading color on link hover */
+    color: #e09521; /* Accent color on hover */
+}
+
+.menu-item p {
+    color: #555; /* Slightly darker paragraph text */
+    font-size: 1em; /* Slightly larger text */
+}
+
+/* About and Contact Section Styles */
+#about, #contact {
+    background-color: #fcf7f0; /* Use the soft background color */
+}
+
+#about p, #contact p {
+    max-width: 800px; /* Limit width for readability */
+    margin: 20px auto; /* More space around paragraphs */
+    text-align: center; /* Center text */
+    font-size: 1.1em; /* Larger text */
+    color: #555;
+}
+
+#contact strong {
+    color: #0056b3; /* Primary blue for emphasis */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #222; /* Darker footer */
+    color: #ccc; /* Lighter text */
+    text-align: center;
+    padding: 30px 0; /* More padding */
+    font-size: 0.9em;
+}
+
+/* --- NEW STYLES FOR ITEM DETAIL PAGES --- */
+#item-detail {
+     background-color: #ffffff; /* White background for detail pages */
+}
+
+.item-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    max-width: 800px; /* Wider container for detail content */
+    margin: 0 auto; /* Center the container itself */
+    text-align: center; /* Center text by default */
+}
+
+.item-title {
+    margin-bottom: 40px; /* More space below title */
+    font-size: 3em; /* Larger title */
+    color: #0056b3;
+}
+
+.item-image {
+    max-width: 90%; /* Image takes up max 90% of its container */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 40px; /* More space below image */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Subtle shadow for the image */
+    /* Remove negative margins and max-width from menu item */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    max-width: 90%; /* Reset for this specific image usage */
+}
+
+.how-to-make,
+.ingredients {
+    width: 100%; /* Take full width of flex container */
+    margin-bottom: 30px; /* More space between sections */
+    text-align: left; /* Align text left within the section */
+    background-color: #fcf7f0; /* Soft background for these blocks */
+    padding: 25px; /* Inner padding */
+    border-radius: 8px;
+    border: 1px solid #eee; /* Subtle border */
+}
+
+.how-to-make h3,
+.ingredients h3 {
+    text-align: center; /* Center heading within the section */
+    margin-bottom: 20px; /* More space below heading */
+    color: #e09521; /* Accent color for these subheadings */
+    font-size: 1.8em;
+}
+
+.how-to-make p {
+    margin-bottom: 15px; /* More space between paragraphs */
+    color: #555;
+    font-size: 1.05em; /* Slightly larger text */
+}
+
+.ingredients ul {
+    list-style: disc inside; /* Add bullet points */
+    padding-left: 20px; /* Indent list */
+    color: #555;
+}
+
+.ingredients li {
+    margin-bottom: 8px; /* More space between list items */
+    font-size: 1.05em;
+}
+
+.back-link {
+    margin-top: 40px; /* More space above the back link */
+    font-size: 1.2em; /* Larger back link */
+    text-align: center; /* Ensure the back link paragraph is centered */
+    width: 100%; /* Allow it to take full width for centering */
+}
+
+.back-link a {
+    color: #0056b3; /* Primary blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+    color: #e09521; /* Accent color on hover */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column; /* Stack logo and nav */
+    }
+
+    nav ul {
+        margin-top: 15px;
+        justify-content: center; /* Center nav items */
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Adjust space */
+    }
+
+    #hero {
+        padding: 100px 20px; /* Adjust hero padding */
+    }
+
+    #hero h2 {
+        font-size: 2.5em; /* Adjust hero title size */
+    }
+
+    h2 { /* Adjust main section titles */
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    h3 { /* Adjust subheadings */
+        font-size: 1.4em;
+    }
+
+    .section-spacing {
+        padding: 60px 0; /* Adjust section spacing */
+    }
+
+    /* Adjust menu item image for smaller screens */
+     .menu-item img {
+        max-width: calc(100% + 30px); /* Adjust for 15px padding */
+        margin-left: -15px;
+        margin-right: -15px;
+        margin-top: -15px;
+        margin-bottom: 15px; /* Adjust bottom margin */
+    }
+     .menu-item a {
+         padding: 15px; /* Adjust padding */
+     }
+     .menu-item h3 {
+         font-size: 1.3em;
+     }
+
+    /* Adjust item detail page on smaller screens */
+    .item-title {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+    }
+     .item-image {
+        max-width: 100%; /* Allow image to take full width */
+        margin-bottom: 30px;
+    }
+    .how-to-make, .ingredients {
+        padding: 20px;
+    }
+     .how-to-make h3, .ingredients h3 {
+         font-size: 1.6em;
+         margin-bottom: 15px;
+     }
+     .back-link {
+         margin-top: 30px;
+     }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header h1 img { /* Adjust logo size on smaller screens */
+        height: 45px;
+        margin-right: 10px;
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    nav ul li {
+         margin: 0 8px; /* Tighter space */
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    h2 { /* Adjust main section titles */
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    h3 { /* Adjust subheadings */
+        font-size: 1.2em;
+    }
+
+    .section-spacing {
+        padding: 50px 0; /* Adjust section spacing */
+    }
+
+
+     /* Further adjust menu item image for tiny screens */
+     .menu-item img {
+        max-width: calc(100% + 20px); /* Adjust for smaller padding if needed */
+        margin-left: -10px;
+        margin-right: -10px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+     .menu-item a {
+         padding: 10px; /* Adjust padding */
+     }
+
+     /* Adjust item detail page on tiny screens */
+     .item-title {
+         font-size: 2em;
+         margin-bottom: 25px;
+     }
+     .item-image {
+         margin-bottom: 25px;
+     }
+      .how-to-make, .ingredients {
+        padding: 15px;
+    }
+    .how-to-make p, .ingredients ul li {
+        font-size: 1em;
+    }
+    .how-to-make h3, .ingredients h3 {
+         font-size: 1.4em;
+         margin-bottom: 10px;
+     }
+     .back-link {
+         font-size: 1.1em;
+         margin-top: 25px;
+     }
+
+}
